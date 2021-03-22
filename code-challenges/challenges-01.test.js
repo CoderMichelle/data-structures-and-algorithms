@@ -27,7 +27,12 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  const resultsArray2 = [];
+  arr.forEach(item => {
+    resultsArray2.push(item + "!")
+  })
+  console.log(resultsArray2);
+  return resultsArray2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +44,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  const resultsArray3 = [];
+  arr.forEach(item => {
+    resultsArray3.push(item.toUpperCase());
+  })
+  console.log(resultsArray3);
+  return resultsArray3
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,12 +62,18 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
+
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase() + "!"
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  const resultsArray4 = [];
+  words.forEach(item => {
+    resultsArray4.push(callback(item));
+  })
+  console.log(resultsArray4);
+  return resultsArray4
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,19 +157,19 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array with an exclamation point added to each value of the original array', () => {
     expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return an array of uppercase strings', () => {
     expect(allUpperCase(['hi', 'how', 'are', 'you'])).toStrictEqual(['HI', 'HOW', 'ARE', 'YOU']);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
