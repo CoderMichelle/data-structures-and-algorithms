@@ -11,10 +11,10 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 const addOne = (arr) => {
   const resultsArray = [];
   arr.forEach(item => {
-    resultsArray.push(item + 1)
-  })
+    resultsArray.push(item + 1);
+  });
 
-  return resultsArray
+  return resultsArray;
   // return [2, 3, 4, 5, 6]
 };
 
@@ -29,10 +29,10 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
   const resultsArray2 = [];
   arr.forEach(item => {
-    resultsArray2.push(item + "!")
+    resultsArray2.push(item + "!");
   })
   console.log(resultsArray2);
-  return resultsArray2
+  return resultsArray2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,9 +47,9 @@ const allUpperCase = (arr) => {
   const resultsArray3 = [];
   arr.forEach(item => {
     resultsArray3.push(item.toUpperCase());
-  })
+  });
   console.log(resultsArray3);
-  return resultsArray3
+  return resultsArray3;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 
 const greeting = (word) => {
-  return word.toUpperCase() + "!"
+  return word.toUpperCase() + "!";
 };
 
 const speaker = (words, callback) => {
@@ -73,7 +73,7 @@ const speaker = (words, callback) => {
     resultsArray4.push(callback(item));
   })
   console.log(resultsArray4);
-  return resultsArray4
+  return resultsArray4;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,11 +93,13 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times, i++) {
+    callback(arr, num);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
