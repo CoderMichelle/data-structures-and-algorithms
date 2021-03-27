@@ -49,7 +49,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  const resultsArr4 = arr.map(num => Math.pow(2, num));
+  const resultsArr4 = [];
+  for (let i = 0; i < arr.length; i++) {
+    resultsArr4.push(Math.pow(2, arr[i]));
+  }
+  // arr.map(num => Math.pow(2, num));
   console.log(resultsArr4);
   return resultsArr4;
 };
@@ -74,7 +78,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  const resultsArr6 = arr.map(num => Math.pow(2, num));
+  console.log(resultsArr6);
+  return resultsArr6;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +94,9 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  const resultsArr7 = arr.map(letter => letter.charCodeAt());
+  console.log(resultsArr7);
+  return resultsArr7;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +110,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  const resultsArr8 = arr.map(element => {
+    if (typeof (element) !== 'number') {
+      return 'N/A';
+    } else if (element % 2 == 0) {
+      return 'even';
+    } else if (element % 2 !== 0) {
+      return 'odd';
+    }
+  });
+  return resultsArr8;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -249,7 +266,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -260,14 +277,14 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
