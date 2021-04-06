@@ -27,7 +27,7 @@ const updateAnimal = (arr, callback) => {
   // console.log(newArr1);
   return newArr1;
 };
-
+// this is exactly what the inside of map would look like, what the map function does!
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
