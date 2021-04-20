@@ -125,7 +125,8 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   const resultArr5 = arr.reduce((answerSoFar, currentValue) => {
-    return answerSoFar + currentValue.name;
+    answerSoFar.push(currentValue.name);
+    return answerSoFar;
   }, []);
   console.log(resultArr5);
   return resultArr5;
